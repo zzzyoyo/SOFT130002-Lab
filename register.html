@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Register</title>
+        <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" type="text/css">
+        <link href="./style.css" rel="stylesheet" type="text/css">
         <script>
             window.onload = function() {
                 createCode()
@@ -36,7 +38,7 @@
     </head>
     <body>
         <header>
-            <a href="index.html">主页</a>
+            <nav><a href="index.html">主页</a></nav>
         </header>
         <h1>创建账户</h1>
         <section>
@@ -55,7 +57,7 @@
                 </p>
                 <p>
                     居住地：<br>
-                    <select>
+                    <select name="area">
 <option value="Hebei">河北省</option>
 <option value="Shanxi">山西省</option>
 <option value="Jilin">吉林省</option>
@@ -98,18 +100,15 @@
                 </p>
                 <p>
                     常用设备：<br>
-                    <select multiple="multiple">
-                        <option value="PC">PC</option>
-                        <option value="PlayStation 4">PlayStation 4</option>
-                        <option value="XBox One">XBox One</option>
-                        <option value="Nintendo Switch">Nintendo Switch</option>
-                    </select>
+                    <input type="checkbox" name="PC" value="PC">PC
+                    <input type="checkbox" name="PlayStation 4" value="PlayStation 4">PlayStation 4
+                    <input type="checkbox" name="XBox One" value="XBox One">XBox One
+                    <input type="checkbox" name="Nintendo Switch" value="Nintendo Switch">Nintendo Switch
                 </p>
                  <p>
                     验证码：<br>
-                    <input type="text" id="验证码输入框" value="不区分大小写"><br>
+                    <input type="text" id="验证码输入框" placeholder="不区分大小写" name="captcha"><br>
                     <input type="button" id="验证码"  onclick="createCode()">
-                    <input type="button" value="验证" onclick="validate()" />
                 </p>
                 <p>
                     请复查以下协议，并通过选择页面底部的复选框同意此协议。您必须同意这些协议条款才能继续。<br>
@@ -178,10 +177,10 @@
 13、法律
 网络服务条款要与中华人民共和国的法律解释相一致，用户和本站一致同意服从高等法院所有管辖。如发生本站服务条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它条款则依旧保持对用户产生法律效力和影响。
                     </textarea><br>
-                    <input type="radio" value="agree" name="agree" checked="checked">同意
-                    <input type="radio" value="disagree" name="agree">不同意
+                    <input type="radio" value="agree" name="agree" >同意
+                    <input type="radio" value="disagree" name="agree" checked="checked">不同意
                 </p>
-                <input type="submit" value="注册">
+                <input type="submit" value="注册" name="register" onclick="validate()">
             </form>
         </section>
 
